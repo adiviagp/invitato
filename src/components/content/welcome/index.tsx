@@ -15,15 +15,22 @@ const Welcome = (): JSX.Element => {
       handleNext();
     } else if (info.offset.x > 100) {
       handlePrev();
+    } else {
+      // Snap back if not enough drag distance
+      x.set(0);
     }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    const nextIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(nextIndex);
+    x.set(0); // Reset drag position
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(prevIndex);
+    x.set(0); // Reset drag position
   };
 
   const getPrevIndex = () => {
@@ -54,10 +61,15 @@ const Welcome = (): JSX.Element => {
             key={currentIndex}
             initial={{ x: 300 }}
             animate={{ x: 0 }}
-            exit={{ x: -300 }}
-            transition={{ duration: 0.5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, duration: 0.8 }} // Adjust duration here
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1} // Add elasticity to dragging
+            onDrag={(_, { offset }) => {
+              // Move images forward/backward when dragging past bounds
+              const moveBy = offset.x / 3;
+              x.set(moveBy);
+            }}
             onDragEnd={handleDragEnd}
             style={{
               display: "flex",
@@ -69,9 +81,16 @@ const Welcome = (): JSX.Element => {
               left: "0%",
             }}
           >
-            <motion.img src={images[getPrevIndex()]} alt={`Slide ${getPrevIndex()}`} style={{ width: "33.33%", height: "100%", objectFit: "cover", opacity: 0.5, margin: "0 5px" }} />
-            <motion.img src={images[currentIndex]} alt={`Slide ${currentIndex}`} style={{ width: "33.33%", height: "100%", objectFit: "cover", scale, margin: "0 5px" }} />
-            <motion.img src={images[getNextIndex()]} alt={`Slide ${getNextIndex()}`} style={{ width: "33.33%", height: "100%", objectFit: "cover", opacity: 0.5, margin: "0 5px" }} />
+            <motion.img src={images[getPrevIndex()]} alt={`Slide ${getPrevIndex()}`} style={{ width: "33.33%", height: "100%", objectFit: "cover", margin: "0 5px" }} />
+            <motion.img
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex}`}
+              style={{ width: "33.33%", height: "100%", objectFit: "cover", scale, margin: "0 5px" }}
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, duration: 0.8 }} // Adjust duration here
+            />
+            <motion.img src={images[getNextIndex()]} alt={`Slide ${getNextIndex()}`} style={{ width: "33.33%", height: "100%", objectFit: "cover", margin: "0 5px" }} />
           </motion.div>
         </AnimatePresence>
       </Box>
