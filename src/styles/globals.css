@@ -4,3 +4,13 @@
   font-style: normal;
   src: url(/fonts/butler.otf) format("opentype");
 }
+
+@font-face {
+  font-family: "Poppins";
+  src: url(/fonts/poppins.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url(/fonts/newsreader.woff2) format("woff2");
+}

@@ -15,15 +15,24 @@ const CoverRight = ({ handleOpen }: CoverRightProps): JSX.Element => {
       backgroundSize="cover"
       backgroundPosition="center center"
       padding="42px"
+      textAlign="center"
     >
-      <Text color="white" fontSize="2xl">
+      <Text marginTop="60px" letterSpacing="2px" marginBottom="8px" fontWeight="bold" fontFamily="Poppins" color="white" fontSize="medium" textAlign="center">
         WEDDING ANNOUNCEMENT
       </Text>
-      <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="7xl">
-        TIFFANY & JARED
-      </Text>
-      <Button colorScheme="blue" onClick={handleOpen}>
-        Open
+      <Box height="calc(90% - 130px)" display="flex" justifyContent="center" alignItems="center">
+        <div>
+          <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="4xl">
+            TIFFANY & JARED
+          </Text>
+          <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="4xl" textAlign="center">
+            #TImetoshaRE
+          </Text>
+        </div>
+      </Box>
+
+      <Button bgColor="#F9F7F4" onClick={handleOpen} minWidth="2rem" padding="0 2.4rem">
+        <Text fontFamily="Newsreader">Open</Text>
       </Button>
     </Box>
   );

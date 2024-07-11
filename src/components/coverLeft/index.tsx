@@ -1,6 +1,6 @@
-import { Box, Text } from "@chakra-ui/react";
 import React from "react";
-import ImgCoverLeft from "@/assets/coverLeft.jpeg";
+import { Box, Text } from "@chakra-ui/react";
+import SlideUp from "@/utils/slideUp";
 
 const CoverLeft = (): JSX.Element => {
   return (
@@ -13,16 +13,25 @@ const CoverLeft = (): JSX.Element => {
       borderRight="8px solid rgba(0, 0, 0, 0.24)"
       padding="42px"
     >
-      <Text color="white" fontSize="2xl">
-        WEDDING ANNOUNCEMENT
-      </Text>
-      <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="7xl">
-        TIFFANY & JARED
-      </Text>
-      <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="xl" maxWidth="800px">
-        Aku ingin mencintaimu dengan sederhana; dengan kata yang tak sempat diucapkan kayu kepada api yang menjadikannya abu. Aku ingin mencintaimu dengan sederhana; dengan isyarat yang tak sempat
-        disampaikan awan kepada hujan yang menjadikannya tiada. <br /> — Sapardi Djoko Damono
-      </Text>
+      <SlideUp>
+        <Text fontFamily="Poppins" fontWeight="700" letterSpacing="2px" color="white" fontSize="medium">
+          WEDDING ANNOUNCEMENT
+        </Text>
+      </SlideUp>
+      <Box paddingTop="32px">
+        <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="7xl" lineHeight="1" letterSpacing="4px">
+          TIFFANY &
+        </Text>
+        <Text fontFamily="Butler" fontWeight="light" color="white" fontSize="7xl" letterSpacing="4px">
+          JARED
+        </Text>
+      </Box>
+      <SlideUp>
+        <Text fontFamily="Butler" fontWeight="300" color="white" maxWidth="800px" fontStyle="italic">
+          Aku ingin mencintaimu dengan sederhana; dengan kata yang tak sempat diucapkan kayu kepada api yang menjadikannya abu. Aku ingin mencintaimu dengan sederhana; dengan isyarat yang tak sempat
+          disampaikan awan kepada hujan yang menjadikannya tiada. <br /> — Sapardi Djoko Damono
+        </Text>
+      </SlideUp>
     </Box>
   );
 };
