@@ -3,6 +3,7 @@
 import Content from "@/components/content";
 import CoverLeft from "@/components/coverLeft";
 import CoverRight from "@/components/coverRight";
+import Sidebar from "@/components/sidebar";
 import { Box, Flex, IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
@@ -44,7 +45,8 @@ export default function Home() {
           {showContent ? (
             <>
               <div style={{ position: "fixed", left: "10px", bottom: "10px", zIndex: 1000 }}>
-                <IconButton icon={isMusicPlaying ? <FaVolumeMute /> : <FaVolumeUp />} onClick={toggleMusic} aria-label={isMusicPlaying ? "Pause Music" : "Play Music"} />
+                <Sidebar />
+                <IconButton marginLeft="10px" icon={isMusicPlaying ? <FaVolumeMute /> : <FaVolumeUp />} onClick={toggleMusic} aria-label={isMusicPlaying ? "Pause Music" : "Play Music"} />
               </div>
               <Content />
             </>

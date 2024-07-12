@@ -44,8 +44,12 @@ const Welcome = (): JSX.Element => {
   return (
     <Box padding="50px 0px 30px" bgColor="#FEFEFE" color="#1A1B1D" textAlign="center">
       <Box fontFamily="Poppins" fontSize="0.75rem" letterSpacing="2px">
-        <Text>DEAR MR-MRS-MS,</Text>
-        <Text>FAMILY & FRIENDS</Text>
+        <Text size="lg" fontSize="0.75rem">
+          DEAR MR-MRS-MS,
+        </Text>
+        <Text size="lg" fontSize="0.75rem">
+          FAMILY & FRIENDS
+        </Text>
       </Box>
 
       <Text padding="24px 0px" fontFamily="Butler" fontSize="2rem" fontWeight="bold" lineHeight="1.2">
