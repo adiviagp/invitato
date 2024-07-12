@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Invitato Clone Documentation
+
+## Project Overview
+
+This project is an invitato clone built using Next.js, Chakra UI, and Framer Motion.
+
+## Project Structure
+
+```
+invitato/
+├── public/
+│   ├── fonts/
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── content/
+│   │   │   ├── welcome/
+│   │   │   ├── ...
+│   │   │   ├── index.tsx
+│   │   ├── ...
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── providers.tsx
+│   │   └── ...
+│   ├── styles/
+│   │   ├── theme.ts
+│   │   ├── globals.css
+│   │   └── ...
+│   └── utils/
+│       ├── slideUp.tsx
+│       └── ...
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md
+```
+
+## Dependencies
+
+- **Next.js**: React framework for server-rendered applications.
+- **Chakra UI**: Component library for building UI with ease.
+- **Framer Motion**: Animation library for React.
+- **Other dependencies**: Check `package.json` for a complete list.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone https://github.com/adiviagp/invitato.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Run the development server:**
 
-## Learn More
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Responsive Design** : The application is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
+- **Dynamic Music Control** : Users can control the music playback by clicking the "Open Invitation" button. Once clicked, the music starts playing, enhancing the user experience with interactive audio features.
+- **Sidebar Navigation** : Users can toggle the sidebar menu by clicking the menu button, providing easy access to navigation options.
+- **Countdown to Wedding** : A countdown timer displays the remaining days, hours, minutes, and seconds until the wedding date, keeping users informed and excited.
+- **Slideshow Background** : The application features a dynamic slideshow background, enhancing visual appeal and engagement.
+- **Interactive Animations** : User interactions trigger cool animations throughout the application, adding delight and interactivity.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+deployed and accessible at [https://invitato-psi.vercel.app/](https://invitato-psi.vercel.app/). You can visit the deployed site to explore the functionalities.
