@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button, VStack, Text } from "@chakra-ui/react";
+import { Button, VStack, Text, Heading, Box, IconButton } from "@chakra-ui/react";
+import BurgerMenu from "@/assets/svg/burgerMenu";
+import { FaXmark } from "react-icons/fa6";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +31,14 @@ const Sidebar = () => {
 
   return (
     <>
-      <Button onClick={toggleSidebar}>Menu</Button>
+      <IconButton
+        onClick={toggleSidebar}
+        borderRadius="50%"
+        backgroundColor="#9a7a5e"
+        marginLeft="10px"
+        icon={isOpen ? <FaXmark color="#FFF" /> : <BurgerMenu />}
+        aria-label={isOpen ? "Menu Open" : "Menu Close"}
+      />
       <AnimatePresence>
         {isOpen && (
           <>
@@ -46,20 +55,25 @@ const Sidebar = () => {
                 bottom: 0,
                 width: "100%",
                 maxWidth: 500,
-                backgroundColor: "white",
+                backgroundColor: "#F9F7F3",
                 boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
                 zIndex: 1000,
                 padding: "20px",
                 overflowY: "auto",
               }}
             >
-              <VStack spacing="4" align="stretch">
-                <Text fontSize="xl">Menu</Text>
-                <Button onClick={toggleSidebar}>Close</Button>
-                <Text>Link 1</Text>
-                <Text>Link 2</Text>
-                <Text>Link 3</Text>
-                <Text>Link 4</Text>
+              <VStack spacing="4" align="flex-end" padding="24px">
+                <Heading>#TImetoshaRE</Heading>
+                <Box width="100%" textAlign="right" borderBottom="1px solid #000">
+                  <Text>BRIDE & GROOM</Text>
+                </Box>
+                <Box width="100%" textAlign="right" borderBottom="1px solid #000">
+                  <Text>LIVE STREAMING</Text>
+                </Box>
+                <Box width="100%" textAlign="right" borderBottom="1px solid #000">
+                  <Text>WEDDING GIFT</Text>
+                </Box>
+
                 {/* Add more links or content as needed */}
               </VStack>
             </motion.div>

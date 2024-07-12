@@ -8,7 +8,7 @@ interface WeveProps {
 }
 const WaveSvg = ({ position, top, left }: WeveProps): JSX.Element => {
   return (
-    <Box position="absolute" top="-36px" left="-180px">
+    <Box position="absolute" top="-40px" left="-190px">
       <svg xmlns="http://www.w3.org/2000/svg" width="270px" height="330px" zoomAndPan="magnify" viewBox="0 0 810 1439.999935" preserveAspectRatio="xMidYMid meet" version="1.0">
         <defs>
           <clipPath id="2a26799b02">

@@ -3,6 +3,7 @@ import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import WaveSvg from "@/assets/svg/wave";
 import LeftArrow from "@/assets/svg/leftArrow";
 import RightArrow from "@/assets/svg/rightArrow";
+import ButtonArrow from "@/components/ui/ButtonArrow";
 
 const GettingMarried = (): JSX.Element => {
   return (
@@ -12,7 +13,7 @@ const GettingMarried = (): JSX.Element => {
         Getting Married!
       </Heading>
       <Box margin="30px auto" position="relative" backgroundImage="/dua.jpg" backgroundSize="cover" backgroundPosition="center center" width={240} height={330}>
-        <WaveSvg position="absolute" top="-36px" left="-180px" />
+        <WaveSvg position="absolute" top="-33px" left="-190px" />
       </Box>
 
       <Text size="lg" marginBottom="30px" textDecoration="underline">
@@ -27,12 +28,8 @@ const GettingMarried = (): JSX.Element => {
         dui lobortis. Sed egestas consequat risus, eu mollis est tincidunt accumsan.
       </Text>
       <Box display="flex" gap="2" justifyContent="center" alignContent="center" padding="3rem 0 3rem">
-        <Button backgroundColor="#f9f7f4" border="1px solid #000" width="70px" fontSize="1.5rem" padding="5px 10px">
-          <LeftArrow />
-        </Button>
-        <Button backgroundColor="#f9f7f4" border="1px solid #000" width="70px" fontSize="1.5rem" padding="5px 10px">
-          <RightArrow />
-        </Button>
+        <ButtonArrow arrow="left" />
+        <ButtonArrow arrow="right" />
       </Box>
     </Box>
   );

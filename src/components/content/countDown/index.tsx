@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
-import WaveSvg from "@/assets/svg/wave";
+import SlideUp from "@/utils/slideUp";
 
 const CountDown = (): JSX.Element => {
-  const [targetDate] = useState("11-11-2024");
+  const [targetDate] = useState("12-27-2024"); //DD-MM-YYYY
   const calculateTimeLeft = () => {
     const target = new Date(targetDate).getTime();
     const now = new Date().getTime();
@@ -42,33 +42,37 @@ const CountDown = (): JSX.Element => {
 
   return (
     <Box padding="3rem" textAlign="center">
-      <Text marginBottom="0.75rem">It will be a joy for us if you are still willing to give your blessing from afar. Thank you for all the words, prayers, and attention given.</Text>
-      <Box display="flex" justifyContent="center" alignContent="center" gap="2">
-        <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
-          <Heading fontWeight="600" fontSize="1.5rem">
-            {days}
-          </Heading>
-          <Text fontSize="0.75rem">Days</Text>
+      <SlideUp>
+        <Text marginBottom="0.75rem">It will be a joy for us if you are still willing to give your blessing from afar. Thank you for all the words, prayers, and attention given.</Text>
+      </SlideUp>
+      <SlideUp delay={0.5}>
+        <Box display="flex" justifyContent="center" alignContent="center" gap="2">
+          <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
+            <Heading fontWeight="600" fontSize="1.5rem">
+              {days}
+            </Heading>
+            <Text fontSize="0.75rem">Days</Text>
+          </Box>
+          <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
+            <Heading fontWeight="600" fontSize="1.5rem">
+              {hours}
+            </Heading>
+            <Text fontSize="0.75rem">Hours</Text>
+          </Box>
+          <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
+            <Heading fontWeight="600" fontSize="1.5rem">
+              {minutes}
+            </Heading>
+            <Text fontSize="0.75rem">Minutes</Text>
+          </Box>
+          <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
+            <Heading fontWeight="600" fontSize="1.5rem">
+              {seconds}
+            </Heading>
+            <Text fontSize="0.75rem">Seconds</Text>
+          </Box>
         </Box>
-        <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
-          <Heading fontWeight="600" fontSize="1.5rem">
-            {hours}
-          </Heading>
-          <Text fontSize="0.75rem">Hours</Text>
-        </Box>
-        <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
-          <Heading fontWeight="600" fontSize="1.5rem">
-            {minutes}
-          </Heading>
-          <Text fontSize="0.75rem">Minutes</Text>
-        </Box>
-        <Box backgroundColor="#f9f7f4" border="1px solid #000" padding="8px 4px" width="60px" height="65px">
-          <Heading fontWeight="600" fontSize="1.5rem">
-            {seconds}
-          </Heading>
-          <Text fontSize="0.75rem">Seconds</Text>
-        </Box>
-      </Box>
+      </SlideUp>
     </Box>
   );
 };

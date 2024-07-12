@@ -1,6 +1,6 @@
-import SlideUp from "@/utils/slideUp";
 import { Box, Button, Text } from "@chakra-ui/react";
 import React from "react";
+import { motion } from "framer-motion";
 
 interface CoverRightProps {
   handleOpen: any;
@@ -31,9 +31,19 @@ const CoverRight = ({ handleOpen }: CoverRightProps): JSX.Element => {
         </div>
       </Box>
 
-      <Button bgColor="#F9F7F4" onClick={handleOpen} minWidth="2rem" padding="0 2.4rem">
-        <Text fontFamily="Newsreader">Open</Text>
-      </Button>
+      <motion.div
+        animate={{ y: [0, -5, 0] }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+      >
+        <Button bgColor="#F9F7F4" onClick={handleOpen} borderRadius="none" minWidth="2rem" height="30px" padding="0 2.4rem">
+          <Text fontFamily="Newsreader">Open</Text>
+        </Button>
+      </motion.div>
     </Box>
   );
 };
