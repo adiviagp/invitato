@@ -11,7 +11,7 @@ const LiveStreaming = (): JSX.Element => {
       textAlign="center"
       width="100%"
       height="280px"
-      backgroundImage="url('/liveStreaming.webp')"
+      backgroundImage="url('/livestreaming.webp')"
       backgroundSize="cover"
       backgroundPosition="center center"
       color="#FEFEFE"
