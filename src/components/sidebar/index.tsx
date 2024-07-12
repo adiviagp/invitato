@@ -2,18 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button, VStack, Text, Heading, Box, IconButton } from "@chakra-ui/react";
 import BurgerMenu from "@/assets/svg/burgerMenu";
-import { FaXmark } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const sidebarRef = useRef(null);
+  const sidebarRef = useRef<any>(null); // Explicit type assertion
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeSidebar = (event) => {
-    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+  const closeSidebar = (event: MouseEvent) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -36,7 +36,7 @@ const Sidebar = () => {
         borderRadius="50%"
         backgroundColor="#9a7a5e"
         marginLeft="10px"
-        icon={isOpen ? <FaXmark color="#FFF" /> : <BurgerMenu />}
+        icon={isOpen ? <FaTimes color="#FFF" /> : <BurgerMenu />}
         aria-label={isOpen ? "Menu Open" : "Menu Close"}
       />
       <AnimatePresence>

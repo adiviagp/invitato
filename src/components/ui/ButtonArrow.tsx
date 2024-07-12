@@ -5,7 +5,7 @@ import RightArrow from "@/assets/svg/rightArrow";
 
 interface ButtonArrowProps {
   arrow: "left" | "right";
-  onClick?: any;
+  onClick?: () => void;
 }
 const ButtonArrow = ({ arrow, onClick }: ButtonArrowProps): JSX.Element => {
   return (
